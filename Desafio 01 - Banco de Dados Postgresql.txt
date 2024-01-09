@@ -1,0 +1,28 @@
+comandos para o Desafio 01 - Banco de Dados Postgresql
+
+# proposta:
+Crie um comando para criar um banco de dados PostgreSQL no ambiente do desenvolvedor de uma forma que cumpra os seguintes requisitos:
+
+O nome do banco de dados deve ser curso_docker
+O usuário de acesso ao banco deve ser docker_usr
+A senha do usuário deve ser docker_pwd
+
+comando:
+
+
+docker container run -d -p 5432:5432 -e POSTGRES_DB=curso_docker -e POSTGRES_USER=docker_usr -e POSTGRES_PASSWORD=docker_pwd postgres
+
+
+Explicação:
+
+docker container run -d: Inicia um contêiner em segundo plano.
+
+-p 5432:5432: Mapeia a porta 5432 do host para a porta 5432 do contêiner. A porta do host é a que você usará para se conectar ao banco de dados PostgreSQL no contêiner.
+
+-e POSTGRES_DB=curso_docker: Define o nome do banco de dados como "curso_docker".
+
+-e POSTGRES_USER=docker_usr: Define o nome do usuário como "docker_usr".
+
+-e POSTGRES_PASSWORD=docker_pwd: Define a senha do usuário como "docker_pwd".
+
+postgres: Especifica a imagem do PostgreSQL que será usada para criar o contêiner.
